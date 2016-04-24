@@ -14,27 +14,11 @@ class DetailsViewController: UIViewController {
     super.viewDidLoad()
 
     self.title = "Details page"
-    self.hideTabBar()
+    if let nav = self.navigationController as? CustomNavigationController {
+      nav.hideTabBar()
+    }
   }
   
-  override func viewWillDisappear(animated: Bool) {
-    self.showTabBar()
-  }
 
-  func hideTabBar() {
-    if let tabBar = self.tabBarController?.tabBar {
-      UIView.animateWithDuration(0.3, animations: {
-        tabBar.frame = CGRectMake(tabBar.frame.origin.x, UIScreen.mainScreen().bounds.size.height + tabBar.frame.size.height, tabBar.frame.size.width, tabBar.frame.size.height)
-      })
-    }
-  }
-  
-  func showTabBar() {
-    if let tabBar = self.tabBarController?.tabBar {
-      UIView.animateWithDuration(0.3, animations: {
-        tabBar.frame = CGRectMake(tabBar.frame.origin.x, UIScreen.mainScreen().bounds.size.height - tabBar.frame.size.height, tabBar.frame.size.width, tabBar.frame.size.height)
-      })
-    }
-  }
   
 }

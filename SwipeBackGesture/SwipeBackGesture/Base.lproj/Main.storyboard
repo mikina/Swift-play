@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="1925" y="1335"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="dgR-0s-hgS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FjB-xw-gbd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FjB-xw-gbd" customClass="CustomNavigationController" customModule="SwipeBackGesture" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="topRated" id="BVR-7e-7Bn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wae-gF-9lJ">
@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="1379" y="496"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="9WG-O3-Sx9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fjh-X6-qhg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fjh-X6-qhg" customClass="CustomNavigationController" customModule="SwipeBackGesture" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="tFr-Bi-xY1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZJX-Z3-oCE">

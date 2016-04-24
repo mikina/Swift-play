@@ -13,6 +13,7 @@
 		27E29C071CCBC7D400B34F6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E29C061CCBC7D400B34F6A /* Assets.xcassets */; };
 		27E29C0A1CCBC7D400B34F6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E29C081CCBC7D400B34F6A /* LaunchScreen.storyboard */; };
 		27E29C121CCBCE4800B34F6A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E29C111CCBCE4800B34F6A /* DetailsViewController.swift */; };
+		27E29C141CCCC63400B34F6A /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E29C131CCCC63400B34F6A /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		27E29C091CCBC7D400B34F6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27E29C0B1CCBC7D400B34F6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27E29C111CCBCE4800B34F6A /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		27E29C131CCCC63400B34F6A /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				27E29C081CCBC7D400B34F6A /* LaunchScreen.storyboard */,
 				27E29C0B1CCBC7D400B34F6A /* Info.plist */,
 				27E29C111CCBCE4800B34F6A /* DetailsViewController.swift */,
+				27E29C131CCCC63400B34F6A /* CustomNavigationController.swift */,
 			);
 			path = SwipeBackGesture;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E29C141CCCC63400B34F6A /* CustomNavigationController.swift in Sources */,
 				27E29C021CCBC7D300B34F6A /* ViewController.swift in Sources */,
 				27E29C001CCBC7D300B34F6A /* AppDelegate.swift in Sources */,
 				27E29C121CCBCE4800B34F6A /* DetailsViewController.swift in Sources */,
