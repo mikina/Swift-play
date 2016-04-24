@@ -8,12 +8,14 @@
 
 import UIKit
 
-class CustomNavigationController: UINavigationController, UIGestureRecognizerDelegate {
+class CustomNavigationController: UINavigationController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
 
   var tabBarHidden = false
+  var animationLock = true
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.delegate = self
     self.interactivePopGestureRecognizer?.delegate = self
     self.interactivePopGestureRecognizer?.addTarget(self, action: #selector(CustomNavigationController.backAction(_:)))
   }
@@ -24,26 +26,48 @@ class CustomNavigationController: UINavigationController, UIGestureRecognizerDel
       let translation = gesture.translationInView(gestureView)
       let percent = Double(translation.x) / Double(tabBar.frame.size.width)
       let calculated = (tabBar.frame.size.height * CGFloat(percent))
-      tabBar.frame = CGRectMake(tabBar.frame.origin.x, UIScreen.mainScreen().bounds.size.height - calculated, tabBar.frame.size.width, tabBar.frame.size.height)
+      if !self.animationLock {
+        tabBar.frame = CGRectMake(tabBar.frame.origin.x, UIScreen.mainScreen().bounds.size.height - calculated, tabBar.frame.size.width, tabBar.frame.size.height)
+      }
     }
   }
 
   func hideTabBar() {
     self.tabBarHidden = true
+    self.animationLock = true
     if let tabBar = self.tabBarController?.tabBar {
       UIView.animateWithDuration(0.3, animations: {
         tabBar.frame = CGRectMake(tabBar.frame.origin.x, UIScreen.mainScreen().bounds.size.height + tabBar.frame.size.height, tabBar.frame.size.width, tabBar.frame.size.height)
+      }, completion: { (finished) in
+        if finished {
+          self.animationLock = false
+        }
       })
     }
   }
   
   func showTabBar() {
     self.tabBarHidden = false
+    self.animationLock = true
     if let tabBar = self.tabBarController?.tabBar {
       UIView.animateWithDuration(0.3, animations: {
         tabBar.frame = CGRectMake(tabBar.frame.origin.x, UIScreen.mainScreen().bounds.size.height - tabBar.frame.size.height, tabBar.frame.size.width, tabBar.frame.size.height)
+      }, completion: { (finished) in
+        if finished {
+          self.animationLock = false
+        }
       })
     }
   }
 
+  func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+    if let coordinator = navigationController.topViewController?.transitionCoordinator() {
+      coordinator.notifyWhenInteractionEndsUsingBlock({ (context) in
+        if context.isCancelled() {
+          self.hideTabBar()
+        }
+      })
+    }
+    
+  }
 }
