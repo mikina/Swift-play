@@ -31,6 +31,15 @@ class CustomNavigationController: UINavigationController, UIGestureRecognizerDel
       }
     }
   }
+  
+  func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    if gestureRecognizer.isKindOfClass(UIScreenEdgePanGestureRecognizer.self)
+      && self.viewControllers.count == 1 {
+      return false
+    }
+    
+    return true
+  }
 
   func hideTabBar() {
     self.tabBarHidden = true
