@@ -24,7 +24,11 @@ class CustomNavigationController: UINavigationController, UIGestureRecognizerDel
     
     if let gestureView = gesture.view, tabBar = self.tabBarController?.tabBar {
       let translation = gesture.translationInView(gestureView)
-      let percent = Double(translation.x) / Double(tabBar.frame.size.width)
+      var percent = Double(translation.x) / Double(tabBar.frame.size.width / 3) // Little tweak to percent value, it will show full tab bar sooner
+      if percent >= 1 {
+        percent = 1
+      }
+      
       let calculated = (tabBar.frame.size.height * CGFloat(percent))
       if !self.animationLock {
         tabBar.frame = CGRectMake(tabBar.frame.origin.x, UIScreen.mainScreen().bounds.size.height - calculated, tabBar.frame.size.width, tabBar.frame.size.height)
