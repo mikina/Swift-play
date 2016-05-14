@@ -8,9 +8,12 @@
 
 import UIKit
 
+let kTransitionDuration = 0.35
+
 class SwipeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+  
   func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return 0.35
+    return kTransitionDuration
   }
   
   func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -37,7 +40,7 @@ class SwipeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     toVC.view.frame = CGRectMake(-50, toVC.view.frame.origin.y, toVC.view.frame.size.width, toVC.view.frame.size.height)
     
-    UIView.animateWithDuration(self.transitionDuration(transitionContext), animations: {
+    UIView.animateWithDuration(kTransitionDuration, animations: {
       fromVC.view.frame = CGRectMake(toVC.view.frame.size.width, fromVC.view.frame.origin.y, fromVC.view.frame.size.width, fromVC.view.frame.size.height)
       toVC.view.frame = CGRectMake(0, toVC.view.frame.origin.y, toVC.view.frame.size.width, toVC.view.frame.size.height)
       mask.alpha = 0
