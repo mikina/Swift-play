@@ -21,32 +21,25 @@ class CustomNavigationController: UINavigationController, UINavigationController
     super.pushViewController(viewController, animated: animated)
     self.addBackGestureForController(viewController)    
   }
-    
-  func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    if operation == .Pop {
-      return SwipeAnimator()
-    }
-    
-    return nil
-  }
-  
-  func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    if animationController.isKindOfClass(SwipeAnimator) {
-      return self.swipeBackTransition
-    }
-    
-    return nil
-  }
   
   func addBackGestureForController(vc: UIViewController) {
     let backGesture = UIPanGestureRecognizer(target: self, action: #selector(CustomNavigationController.handleBackGesture(_:)))
     vc.view.addGestureRecognizer(backGesture)
   }
   
+  func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    print("animation for operation")
+    if operation == .Pop {
+      return SwipeAnimator()
+    }
+    
+    return nil
+  }
+
   func handleBackGesture(recognizer: UIPanGestureRecognizer) {
     var percent = recognizer.translationInView(recognizer.view).x / recognizer.view!.bounds.size.width
     var velocity = recognizer.velocityInView(recognizer.view).x
-        
+    
     percent = min(1, max(0, percent))
     velocity = min(1000, max(0, velocity))
     
@@ -70,4 +63,12 @@ class CustomNavigationController: UINavigationController, UINavigationController
     }
   }
   
+  func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    if animationController.isKindOfClass(SwipeAnimator) {
+      return self.swipeBackTransition
+    }
+    
+    return nil
+  }
+
 }
