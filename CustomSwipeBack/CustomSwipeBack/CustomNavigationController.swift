@@ -28,7 +28,6 @@ class CustomNavigationController: UINavigationController, UINavigationController
   }
   
   func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    print("animation for operation")
     if operation == .Pop {
       return SwipeAnimator()
     }
@@ -37,15 +36,17 @@ class CustomNavigationController: UINavigationController, UINavigationController
   }
 
   func handleBackGesture(recognizer: UIPanGestureRecognizer) {
-    var percent = recognizer.translationInView(recognizer.view).x / recognizer.view!.bounds.size.width
-    var velocity = recognizer.velocityInView(recognizer.view).x
-    
+    guard let recognizerView = recognizer.view else {
+      return
+    }
+
+    var percent = recognizer.translationInView(recognizerView).x / recognizerView.bounds.size.width
+    var velocity = recognizer.velocityInView(recognizerView).x
+
     percent = min(1, max(0, percent))
     velocity = min(1000, max(0, velocity))
     
-//    print("percent: \(percent), \(velocity)")
     if recognizer.state == .Began {
-      print("start recognizer")
       self.swipeBackTransition = UIPercentDrivenInteractiveTransition()
       self.popViewControllerAnimated(true)
     }
@@ -54,11 +55,9 @@ class CustomNavigationController: UINavigationController, UINavigationController
     }
     else if recognizer.state == .Cancelled || recognizer.state == .Ended {
       if percent >= 0.4 || velocity >= 100 {
-        print("finish")
         self.swipeBackTransition?.finishInteractiveTransition()
       }
       else {
-        print("cancel")
         self.swipeBackTransition?.cancelInteractiveTransition()
       }
       
@@ -67,7 +66,6 @@ class CustomNavigationController: UINavigationController, UINavigationController
   }
   
   func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    print("interactive")
     if animationController.isKindOfClass(SwipeAnimator) {
       return self.swipeBackTransition
     }
