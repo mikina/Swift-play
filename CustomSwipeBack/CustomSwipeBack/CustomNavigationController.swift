@@ -43,8 +43,9 @@ class CustomNavigationController: UINavigationController, UINavigationController
     percent = min(1, max(0, percent))
     velocity = min(1000, max(0, velocity))
     
-    print("percent: \(percent), \(velocity)")
+//    print("percent: \(percent), \(velocity)")
     if recognizer.state == .Began {
+      print("start recognizer")
       self.swipeBackTransition = UIPercentDrivenInteractiveTransition()
       self.popViewControllerAnimated(true)
     }
@@ -53,9 +54,11 @@ class CustomNavigationController: UINavigationController, UINavigationController
     }
     else if recognizer.state == .Cancelled || recognizer.state == .Ended {
       if percent >= 0.4 || velocity >= 100 {
+        print("finish")
         self.swipeBackTransition.finishInteractiveTransition()
       }
       else {
+        print("cancel")
         self.swipeBackTransition.cancelInteractiveTransition()
       }
       
@@ -64,6 +67,7 @@ class CustomNavigationController: UINavigationController, UINavigationController
   }
   
   func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    print("interactive")
     if animationController.isKindOfClass(SwipeAnimator) {
       return self.swipeBackTransition
     }

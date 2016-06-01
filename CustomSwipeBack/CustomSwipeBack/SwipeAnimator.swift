@@ -30,8 +30,6 @@ class SwipeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     containerView?.addSubview(toVC.view)
     containerView?.bringSubviewToFront(fromVC.view)
-    
-    toVC.view.frame = transitionContext.finalFrameForViewController(toVC)
 
     let mask = UIView(frame: CGRectMake(0, 0, toVC.view.frame.size.width, toVC.view.frame.size.height))
     mask.backgroundColor = UIColor.blackColor()
@@ -41,12 +39,12 @@ class SwipeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     toVC.view.frame = CGRectMake(-50, toVC.view.frame.origin.y, toVC.view.frame.size.width, toVC.view.frame.size.height)
     
     UIView.animateWithDuration(kTransitionDuration, animations: {
-      fromVC.view.frame = CGRectMake(toVC.view.frame.size.width, fromVC.view.frame.origin.y, fromVC.view.frame.size.width, fromVC.view.frame.size.height)
+      fromVC.view.frame = CGRectMake(fromVC.view.frame.size.width, fromVC.view.frame.origin.y, fromVC.view.frame.size.width, fromVC.view.frame.size.height)
       toVC.view.frame = CGRectMake(0, toVC.view.frame.origin.y, toVC.view.frame.size.width, toVC.view.frame.size.height)
       mask.alpha = 0
     }) { (finished) in
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-      mask.removeFromSuperview()
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+        mask.removeFromSuperview()
     }
   }
 }

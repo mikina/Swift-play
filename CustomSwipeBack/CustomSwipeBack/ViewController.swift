@@ -18,13 +18,13 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
       super.viewDidAppear(animated)
     
-      if self.view.gestureRecognizers?.count > 0 {
-        var arrayOfGestureRecognizers: [UIGestureRecognizer] = self.view.gestureRecognizers! as NSArray as! [UIGestureRecognizer]
-        
-        for item in arrayOfGestureRecognizers {
-          print("Gesture Recognizer:\(item)")
-        }
-      }
+//      if self.view.gestureRecognizers?.count > 0 {
+//        var arrayOfGestureRecognizers: [UIGestureRecognizer] = self.view.gestureRecognizers! as NSArray as! [UIGestureRecognizer]
+//        
+//        for item in arrayOfGestureRecognizers {
+//          print("Gesture Recognizer:\(item)")
+//        }
+//      }
     }
 
     override func didReceiveMemoryWarning() {
