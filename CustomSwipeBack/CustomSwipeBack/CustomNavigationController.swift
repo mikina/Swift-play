@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomNavigationController: UINavigationController, UINavigationControllerDelegate {
-  var swipeBackTransition: UIPercentDrivenInteractiveTransition!
+  var swipeBackTransition: UIPercentDrivenInteractiveTransition?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,16 +50,16 @@ class CustomNavigationController: UINavigationController, UINavigationController
       self.popViewControllerAnimated(true)
     }
     else if recognizer.state == .Changed {
-      self.swipeBackTransition.updateInteractiveTransition(percent)
+      self.swipeBackTransition?.updateInteractiveTransition(percent)
     }
     else if recognizer.state == .Cancelled || recognizer.state == .Ended {
       if percent >= 0.4 || velocity >= 100 {
         print("finish")
-        self.swipeBackTransition.finishInteractiveTransition()
+        self.swipeBackTransition?.finishInteractiveTransition()
       }
       else {
         print("cancel")
-        self.swipeBackTransition.cancelInteractiveTransition()
+        self.swipeBackTransition?.cancelInteractiveTransition()
       }
       
       self.swipeBackTransition = nil
