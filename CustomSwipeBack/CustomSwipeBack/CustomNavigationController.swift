@@ -43,7 +43,7 @@ class CustomNavigationController: UINavigationController, UINavigationController
     var percent = recognizer.translationInView(recognizerView).x / recognizerView.bounds.size.width
     var velocity = recognizer.velocityInView(recognizerView).x
 
-    percent = min(1, max(0, percent))
+    percent = min(1, max(-1, percent))
     velocity = min(1000, max(0, velocity))
     
     if recognizer.state == .Began {

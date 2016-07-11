@@ -15,6 +15,7 @@
 		271A96AD1CD8B50500B06BB4 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A96AC1CD8B50500B06BB4 /* FadeAnimator.swift */; };
 		271A96AF1CD8BB8700B06BB4 /* SwipeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A96AE1CD8BB8700B06BB4 /* SwipeAnimator.swift */; };
 		2795EF0A1CD72E1700025A37 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795EF091CD72E1700025A37 /* CustomNavigationController.swift */; };
+		27FFC22A1D04B86100BDA04D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FFC2291D04B86100BDA04D /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		271A96AC1CD8B50500B06BB4 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 		271A96AE1CD8BB8700B06BB4 /* SwipeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeAnimator.swift; sourceTree = "<group>"; };
 		2795EF091CD72E1700025A37 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		27FFC2291D04B86100BDA04D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				2795EF091CD72E1700025A37 /* CustomNavigationController.swift */,
 				271A96AC1CD8B50500B06BB4 /* FadeAnimator.swift */,
 				271A96AE1CD8BB8700B06BB4 /* SwipeAnimator.swift */,
+				27FFC2291D04B86100BDA04D /* CustomTableViewCell.swift */,
 			);
 			path = CustomSwipeBack;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FFC22A1D04B86100BDA04D /* CustomTableViewCell.swift in Sources */,
 				271A96AD1CD8B50500B06BB4 /* FadeAnimator.swift in Sources */,
 				2795EF0A1CD72E1700025A37 /* CustomNavigationController.swift in Sources */,
 				271A96AF1CD8BB8700B06BB4 /* SwipeAnimator.swift in Sources */,

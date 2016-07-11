@@ -37,6 +37,8 @@ class SwipeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     toVC.view.addSubview(mask)
     
     toVC.view.frame = CGRectMake(-50, toVC.view.frame.origin.y, toVC.view.frame.size.width, toVC.view.frame.size.height)
+    fromVC.view.frame = CGRectMake(0, fromVC.view.frame.origin.y, fromVC.view.frame.size.width, fromVC.view.frame.size.height)
+    
     
     UIView.animateWithDuration(kTransitionDuration, animations: {
       fromVC.view.frame = CGRectMake(fromVC.view.frame.size.width, fromVC.view.frame.origin.y, fromVC.view.frame.size.width, fromVC.view.frame.size.height)
