@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="6dI-ah-3dS" customClass="CustomTableViewCell" customModule="CustomSwipeBack" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CustomTableViewCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomTableViewCell" id="6dI-ah-3dS" customClass="CustomTableViewCell" customModule="CustomSwipeBack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6dI-ah-3dS" id="PaR-mb-EOd">
@@ -48,8 +48,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="M67-Fg-rU1"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="z1e-93-U2T"/>
+                                    <outlet property="dataSource" destination="M8c-lK-fOL" id="LOl-Bc-gjR"/>
+                                    <outlet property="delegate" destination="yrs-ix-zDP" id="XYK-34-xIE"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -62,8 +62,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="C8s-Eg-but"/>
+                    <connections>
+                        <outlet property="tableViewCoordinator" destination="Xoc-1Y-gGY" id="3HP-PL-Pse"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="M8c-lK-fOL" customClass="ItemsTableDataSource" customModule="CustomSwipeBack" customModuleProvider="target"/>
+                <customObject id="yrs-ix-zDP" customClass="ItemsTableDelegate" customModule="CustomSwipeBack" customModuleProvider="target"/>
+                <customObject id="Xoc-1Y-gGY" customClass="ItemsTableCoordinator" customModule="CustomSwipeBack" customModuleProvider="target">
+                    <connections>
+                        <outlet property="dataSource" destination="M8c-lK-fOL" id="asQ-Do-i7V"/>
+                        <outlet property="delegate" destination="yrs-ix-zDP" id="Arn-aq-DJA"/>
+                        <outlet property="tableView" destination="OEr-Da-89T" id="AnA-uh-bvO"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1347" y="908"/>
         </scene>

@@ -15,6 +15,10 @@
 		271A96AD1CD8B50500B06BB4 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A96AC1CD8B50500B06BB4 /* FadeAnimator.swift */; };
 		271A96AF1CD8BB8700B06BB4 /* SwipeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A96AE1CD8BB8700B06BB4 /* SwipeAnimator.swift */; };
 		2795EF0A1CD72E1700025A37 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795EF091CD72E1700025A37 /* CustomNavigationController.swift */; };
+		27DD21461D3AC15F0088A00E /* ItemsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD21451D3AC15F0088A00E /* ItemsTableCoordinator.swift */; };
+		27DD21481D3AC2860088A00E /* ItemsTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD21471D3AC2860088A00E /* ItemsTableDataSource.swift */; };
+		27DD214A1D3AC2AF0088A00E /* ItemsTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD21491D3AC2AF0088A00E /* ItemsTableDelegate.swift */; };
+		27DD214C1D3AC33C0088A00E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD214B1D3AC33C0088A00E /* Item.swift */; };
 		27FFC22A1D04B86100BDA04D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FFC2291D04B86100BDA04D /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,10 @@
 		271A96AC1CD8B50500B06BB4 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 		271A96AE1CD8BB8700B06BB4 /* SwipeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeAnimator.swift; sourceTree = "<group>"; };
 		2795EF091CD72E1700025A37 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		27DD21451D3AC15F0088A00E /* ItemsTableCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableCoordinator.swift; sourceTree = "<group>"; };
+		27DD21471D3AC2860088A00E /* ItemsTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableDataSource.swift; sourceTree = "<group>"; };
+		27DD21491D3AC2AF0088A00E /* ItemsTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableDelegate.swift; sourceTree = "<group>"; };
+		27DD214B1D3AC33C0088A00E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		27FFC2291D04B86100BDA04D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +80,10 @@
 				271A96AC1CD8B50500B06BB4 /* FadeAnimator.swift */,
 				271A96AE1CD8BB8700B06BB4 /* SwipeAnimator.swift */,
 				27FFC2291D04B86100BDA04D /* CustomTableViewCell.swift */,
+				27DD21451D3AC15F0088A00E /* ItemsTableCoordinator.swift */,
+				27DD21471D3AC2860088A00E /* ItemsTableDataSource.swift */,
+				27DD21491D3AC2AF0088A00E /* ItemsTableDelegate.swift */,
+				27DD214B1D3AC33C0088A00E /* Item.swift */,
 			);
 			path = CustomSwipeBack;
 			sourceTree = "<group>";
@@ -147,9 +159,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DD214C1D3AC33C0088A00E /* Item.swift in Sources */,
 				27FFC22A1D04B86100BDA04D /* CustomTableViewCell.swift in Sources */,
 				271A96AD1CD8B50500B06BB4 /* FadeAnimator.swift in Sources */,
+				27DD21481D3AC2860088A00E /* ItemsTableDataSource.swift in Sources */,
+				27DD21461D3AC15F0088A00E /* ItemsTableCoordinator.swift in Sources */,
 				2795EF0A1CD72E1700025A37 /* CustomNavigationController.swift in Sources */,
+				27DD214A1D3AC2AF0088A00E /* ItemsTableDelegate.swift in Sources */,
 				271A96AF1CD8BB8700B06BB4 /* SwipeAnimator.swift in Sources */,
 				2704C7961CD6A2DF00EFA0D0 /* ViewController.swift in Sources */,
 				2704C7941CD6A2DF00EFA0D0 /* AppDelegate.swift in Sources */,
