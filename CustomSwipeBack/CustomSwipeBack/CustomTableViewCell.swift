@@ -17,6 +17,6 @@ class CustomTableViewCell: UITableViewCell {
   }
 
   func setup(item: Item) {
-    self.title.text = item.title
+    //
   }
 }

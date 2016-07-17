@@ -15,9 +15,9 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let item = Item(title: "test", filename: "test.jpg")
+    let data = DataManager().loadData()
     
-    self.tableViewCoordinator.reloadData([item])
+    self.tableViewCoordinator.reloadData(data)
   }
 }
 

@@ -9,11 +9,13 @@
 import UIKit
 
 class Item: NSObject {
-  let title: String
+  let author: String
+  let location: String
   let filename: String
   
-  init(title: String, filename: String) {
-    self.title = title
+  init(author: String, location: String, filename: String) {
+    self.author = author
+    self.location = location
     self.filename = filename
   }
 }

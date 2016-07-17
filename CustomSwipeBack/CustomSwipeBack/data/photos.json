@@ -1,0 +1,29 @@
+{
+  "photos": [{
+      "photo": "photo-1456318019777-ccdc4d5b2396.jpeg",
+      "author": "Jamie Mink",
+      "location": "Wye River, Australia"
+    }, {
+      "photo": "photo-1453230806017-56d81464b6c5.jpeg",
+      "author": "Vladimir Kudinov",
+      "location": "New York, United States"
+    }, {
+      "photo": "photo-1461080639469-66d73688fb21.jpeg",
+      "author": "Delfi de la Rua",
+      "location": "Haiku-Pauwela, United States"
+    }, {
+      "photo": "photo-1454897834822-1ece264a5d89.jpeg",
+      "author": "Artem Verbo",
+      "location": "Auckland, New Zealand"
+    }, {
+      "photo": "photo-1462774603919-1d8087e62cad.jpeg",
+      "author": "Anders Jildén",
+      "location": "New York, United States"
+    }, {
+      "photo": "photo-1440613905118-99b921706b5c.jpeg",
+      "author": "valor kopeny",
+      "location": "New York, USA"
+    }
+
+  ]
+}
