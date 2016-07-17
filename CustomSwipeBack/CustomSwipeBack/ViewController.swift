@@ -15,9 +15,19 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let data = DataManager().loadData()
+    self.setupView()
     
-    self.tableViewCoordinator.reloadData(data)
+    self.tableViewCoordinator.setupView()
+    let data = DataManager().loadData()
+    self.tableViewCoordinator.reloadData(data)    
+  }
+  
+  func setupView() {
+    self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+    self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+    self.navigationController?.navigationBar.alpha = 0
+    self.navigationController?.navigationBar.shadowImage = UIImage()
   }
 }
 

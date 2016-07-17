@@ -11,7 +11,7 @@ import UIKit
 class ItemsTableDelegate: UIControl, UITableViewDelegate {
 
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 60
+    return 200
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -13,6 +13,18 @@ class ItemsTableCoordinator: NSObject {
   @IBOutlet var dataSource: ItemsTableDataSource!
   @IBOutlet var delegate: ItemsTableDelegate!
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+  }
+  
+  func setupView() {
+    if self.tableView != nil {
+      self.tableView.tableFooterView = nil
+      self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+    }
+  }
+  
   func reloadData(data: [Item]) {
     self.dataSource.data = data;
     
