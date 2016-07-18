@@ -12,10 +12,12 @@ class Item: NSObject {
   let author: String
   let location: String
   let filename: String
+  let shortDescription: String
   
-  init(author: String, location: String, filename: String) {
+  init(author: String, location: String, filename: String, shortDescription: String) {
     self.author = author
     self.location = location
     self.filename = filename
+    self.shortDescription = shortDescription
   }
 }

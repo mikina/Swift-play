@@ -12,6 +12,7 @@ class DetailsViewController: UIViewController {
   
   var item: Item? = nil
   @IBOutlet weak var photo: UIImageView!
+  @IBOutlet weak var additionalDescription: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,6 +22,7 @@ class DetailsViewController: UIViewController {
   func setupView() {
     if let item = self.item {
       self.photo.image = UIImage(named: item.filename)
+      self.additionalDescription.text = item.shortDescription
     }
   }
 }

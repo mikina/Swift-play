@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6dI-ah-3dS" id="PaR-mb-EOd">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kku-kD-ObR">
@@ -104,7 +104,7 @@
         <!--Details View Controller-->
         <scene sceneID="J5m-Bd-YfR">
             <objects>
-                <viewController id="sgd-le-jHl" customClass="DetailsViewController" customModule="CustomSwipeBack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sgd-le-jHl" customClass="DetailsViewController" customModule="CustomSwipeBack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Axy-tC-ZWH"/>
                         <viewControllerLayoutGuide type="bottom" id="DrC-1Z-4g2"/>
@@ -113,21 +113,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fis-FI-LyM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftL-kG-9PW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fis-FI-LyM">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fis-FI-LyM" secondAttribute="height" multiplier="15:8" id="8Xx-tK-bey"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AYI-yK-Ofa">
+                                        <rect key="frame" x="8" y="330" width="584" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Iyh-2D-zaS"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="fis-FI-LyM" secondAttribute="height" multiplier="15:8" id="xcq-1d-peQ"/>
+                                    <constraint firstItem="fis-FI-LyM" firstAttribute="leading" secondItem="ftL-kG-9PW" secondAttribute="leading" id="1Tg-ll-z3j"/>
+                                    <constraint firstAttribute="trailing" secondItem="AYI-yK-Ofa" secondAttribute="trailing" constant="8" id="6N6-4c-RjT"/>
+                                    <constraint firstItem="fis-FI-LyM" firstAttribute="top" secondItem="ftL-kG-9PW" secondAttribute="top" id="Hag-yS-ma7"/>
+                                    <constraint firstAttribute="trailing" secondItem="fis-FI-LyM" secondAttribute="trailing" id="VRH-uK-5xU"/>
+                                    <constraint firstAttribute="bottom" secondItem="AYI-yK-Ofa" secondAttribute="bottom" id="Z6x-8K-Tlz"/>
+                                    <constraint firstItem="AYI-yK-Ofa" firstAttribute="leading" secondItem="ftL-kG-9PW" secondAttribute="leading" constant="8" id="fEf-g6-g49"/>
+                                    <constraint firstItem="fis-FI-LyM" firstAttribute="width" secondItem="ftL-kG-9PW" secondAttribute="width" id="hwJ-Cb-ZsZ"/>
+                                    <constraint firstItem="AYI-yK-Ofa" firstAttribute="top" secondItem="fis-FI-LyM" secondAttribute="bottom" constant="10" id="nDD-gb-dQB"/>
                                 </constraints>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="fis-FI-LyM" secondAttribute="trailing" id="J4T-0D-alm"/>
-                            <constraint firstItem="fis-FI-LyM" firstAttribute="leading" secondItem="1Lq-fw-uuy" secondAttribute="leading" id="P9f-Gg-ZA2"/>
-                            <constraint firstItem="fis-FI-LyM" firstAttribute="top" secondItem="1Lq-fw-uuy" secondAttribute="top" id="qqb-uc-e21"/>
+                            <constraint firstAttribute="trailing" secondItem="ftL-kG-9PW" secondAttribute="trailing" id="OqQ-1T-VLs"/>
+                            <constraint firstItem="ftL-kG-9PW" firstAttribute="top" secondItem="1Lq-fw-uuy" secondAttribute="top" id="QIa-0b-soF"/>
+                            <constraint firstItem="ftL-kG-9PW" firstAttribute="leading" secondItem="1Lq-fw-uuy" secondAttribute="leading" id="RNz-vH-quL"/>
+                            <constraint firstItem="DrC-1Z-4g2" firstAttribute="top" secondItem="ftL-kG-9PW" secondAttribute="bottom" id="bBl-CC-oi5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="additionalDescription" destination="AYI-yK-Ofa" id="Fdu-xr-WkP"/>
                         <outlet property="photo" destination="fis-FI-LyM" id="ukP-41-Bj2"/>
                         <outlet property="tableView" destination="OEr-Da-89T" id="tuj-y6-V39"/>
                     </connections>

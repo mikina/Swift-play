@@ -29,8 +29,11 @@ class DataManager: NSObject {
         guard let location = item["location"] as? String else {
           continue
         }
+        guard let shortDescription = item["description"] as? String else {
+          continue
+        }
         
-        let newItem = Item(author: author, location: location, filename: photo)
+        let newItem = Item(author: author, location: location, filename: photo, shortDescription: shortDescription)
         self.items.append(newItem)
       }
     }
