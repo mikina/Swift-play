@@ -28,6 +28,20 @@ class ViewController: UIViewController {
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
     self.navigationController?.navigationBar.alpha = 0
     self.navigationController?.navigationBar.shadowImage = UIImage()
+    
+    if self.tableViewCoordinator != nil {
+      self.tableViewCoordinator.openItem = { item in
+        self.performSegueWithIdentifier("details", sender: item)
+      }
+    }
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "details" {
+      if let detailsViewController = segue.destinationViewController as? DetailsViewController {
+        detailsViewController.item = sender as? Item
+      }
+    }
   }
 }
 
