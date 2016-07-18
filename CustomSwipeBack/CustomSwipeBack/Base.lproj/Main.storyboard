@@ -132,16 +132,40 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzw-qM-REU">
+                                        <rect key="frame" x="8" y="274" width="584" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="CfV-w4-xOi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUG-pp-vbd">
+                                        <rect key="frame" x="8" y="142" width="584" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="Cyf-12-Ynn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="fis-FI-LyM" firstAttribute="leading" secondItem="ftL-kG-9PW" secondAttribute="leading" id="1Tg-ll-z3j"/>
                                     <constraint firstAttribute="trailing" secondItem="AYI-yK-Ofa" secondAttribute="trailing" constant="8" id="6N6-4c-RjT"/>
+                                    <constraint firstAttribute="trailing" secondItem="xzw-qM-REU" secondAttribute="trailing" constant="8" id="7CC-Gj-sK0"/>
+                                    <constraint firstAttribute="trailing" secondItem="VUG-pp-vbd" secondAttribute="trailing" constant="8" id="9g4-LX-paR"/>
+                                    <constraint firstItem="VUG-pp-vbd" firstAttribute="centerY" secondItem="fis-FI-LyM" secondAttribute="centerY" id="GF7-JY-oXE"/>
                                     <constraint firstItem="fis-FI-LyM" firstAttribute="top" secondItem="ftL-kG-9PW" secondAttribute="top" id="Hag-yS-ma7"/>
+                                    <constraint firstItem="VUG-pp-vbd" firstAttribute="leading" secondItem="ftL-kG-9PW" secondAttribute="leading" constant="8" id="Ohv-9H-pJK"/>
                                     <constraint firstAttribute="trailing" secondItem="fis-FI-LyM" secondAttribute="trailing" id="VRH-uK-5xU"/>
                                     <constraint firstAttribute="bottom" secondItem="AYI-yK-Ofa" secondAttribute="bottom" id="Z6x-8K-Tlz"/>
                                     <constraint firstItem="AYI-yK-Ofa" firstAttribute="leading" secondItem="ftL-kG-9PW" secondAttribute="leading" constant="8" id="fEf-g6-g49"/>
+                                    <constraint firstItem="xzw-qM-REU" firstAttribute="leading" secondItem="ftL-kG-9PW" secondAttribute="leading" constant="8" id="heg-yN-143"/>
                                     <constraint firstItem="fis-FI-LyM" firstAttribute="width" secondItem="ftL-kG-9PW" secondAttribute="width" id="hwJ-Cb-ZsZ"/>
                                     <constraint firstItem="AYI-yK-Ofa" firstAttribute="top" secondItem="fis-FI-LyM" secondAttribute="bottom" constant="10" id="nDD-gb-dQB"/>
+                                    <constraint firstItem="xzw-qM-REU" firstAttribute="bottom" secondItem="fis-FI-LyM" secondAttribute="bottom" constant="-10" id="vkr-hK-2FZ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -155,6 +179,8 @@
                     </view>
                     <connections>
                         <outlet property="additionalDescription" destination="AYI-yK-Ofa" id="Fdu-xr-WkP"/>
+                        <outlet property="author" destination="xzw-qM-REU" id="iE7-Br-1Dl"/>
+                        <outlet property="itemTitle" destination="VUG-pp-vbd" id="oJd-3I-weG"/>
                         <outlet property="photo" destination="fis-FI-LyM" id="ukP-41-Bj2"/>
                         <outlet property="tableView" destination="OEr-Da-89T" id="tuj-y6-V39"/>
                     </connections>
