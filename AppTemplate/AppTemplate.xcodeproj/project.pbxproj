@@ -11,6 +11,7 @@
 		272C6CB01D848FB900D6A107 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C6CAF1D848FB900D6A107 /* ViewController.swift */; };
 		272C6CB51D848FB900D6A107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272C6CB41D848FB900D6A107 /* Assets.xcassets */; };
 		272C6CB81D848FB900D6A107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272C6CB61D848FB900D6A107 /* LaunchScreen.storyboard */; };
+		272C6CD11D84963000D6A107 /* SampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C6CD01D84963000D6A107 /* SampleSpec.swift */; };
 		511CEAE1474D087783992543 /* Pods_AppTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA79C7A1E411DA7A5B1764C /* Pods_AppTemplate.framework */; };
 		879C7ECB1B78227701B9CDFB /* Pods_AppTemplateSpec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F72350726E4E3A24F267A6 /* Pods_AppTemplateSpec.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		272C6CB91D848FB900D6A107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		272C6CBE1D848FB900D6A107 /* AppTemplateSpec.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTemplateSpec.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		272C6CCE1D84909200D6A107 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		272C6CD01D84963000D6A107 /* SampleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleSpec.swift; sourceTree = "<group>"; };
 		5CB815A9F609355470F759A8 /* Pods-AppTemplateSpec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateSpec.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateSpec/Pods-AppTemplateSpec.release.xcconfig"; sourceTree = "<group>"; };
 		6612B064402F6358AD40217F /* Pods-AppTemplateSpec.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateSpec.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateSpec/Pods-AppTemplateSpec.debug.xcconfig"; sourceTree = "<group>"; };
 		81CB4DD2ED002CEB1A5AFA49 /* Pods-AppTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				272C6CCE1D84909200D6A107 /* Info.plist */,
+				272C6CD01D84963000D6A107 /* SampleSpec.swift */,
 			);
 			path = AppTemplateSpec;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272C6CD11D84963000D6A107 /* SampleSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,10 +473,12 @@
 			baseConfigurationReference = 6612B064402F6358AD40217F /* Pods-AppTemplateSpec.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AppTemplateSpec/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fdt.AppTemplateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppTemplate.app/AppTemplate";
 			};
 			name = Debug;
@@ -482,6 +488,7 @@
 			baseConfigurationReference = 5CB815A9F609355470F759A8 /* Pods-AppTemplateSpec.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AppTemplateSpec/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fdt.AppTemplateTests;
